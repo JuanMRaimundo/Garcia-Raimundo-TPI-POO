@@ -22,7 +22,7 @@ public class Pedido extends Base implements Calculable {
     private FormaPago formaPago;     
     //listado de detalles relación 1:N con detallePedido
     private List<DetallePedido> detalles;
-    //Usuario que realiza el pedido
+    //Usuario que realiza el pedido - Relación de Agregación
     private Usuario usuario;
     
         // Constructor vacío
@@ -40,7 +40,7 @@ public class Pedido extends Base implements Calculable {
         this.formaPago = formaPago;
         this.usuario = usuario;
         
-        this.total = 0.0; // Se calcula, no se setea manualmente [cite: 753]
+        this.total = 0.0; // Se calcula, no se setea manualmente 
         this.detalles = new ArrayList<>();
     } 
     

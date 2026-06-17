@@ -157,4 +157,15 @@ public class UsuarioService {
         return false;
     }
     
+    
+    //METODO DEMOSTRACIÓN DEL SOFT DELETE 
+    public void imprimirTodosDebug() {
+        System.out.println("\n--- TODOS LOS USUARIOS EN MEMORIA (Activos y Bajas) ---");
+        this.usuarios.forEach(u -> {
+            String estado = u.isEliminado() ? "ELIMINADO" : "ACTIVO";
+            System.out.println("ID: " + u.getId() + " | " + u.getNombre() + " " + u.getApellido() + " | Estado: " + estado);
+        });
+        System.out.println("-----------------------------------------------------------------");
+    }
+    
 }

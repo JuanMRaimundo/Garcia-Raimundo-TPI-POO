@@ -13,7 +13,7 @@ public class DetallePedido {
     private Double subtotal; 
     private Producto producto; 
 
-    // Constructor sin id ni super(), nacerá cuando lo convoque la clase Pedido
+    // Constructor sin id ni super(), nacerá cuando lo convoque la clase Pedido (relación composición)
     public DetallePedido(int cantidad, Producto producto) {
         this.cantidad = cantidad;
         this.producto = producto;

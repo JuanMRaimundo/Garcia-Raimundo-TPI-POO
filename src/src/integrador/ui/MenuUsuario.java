@@ -51,6 +51,7 @@ public class MenuUsuario {
                     case 2: crear(); break;
                     case 3: editar(); break;
                     case 4: eliminar(); break;
+                    case 99: usuarioService.imprimirTodosDebug(); break; //Agregamos la opción "invisible" para chequear usuarios ya "eliminados"
                     case 0: System.out.println("<<< Volviendo..."); break;
                     default: System.out.println("❌ Invalido.");
                 }
