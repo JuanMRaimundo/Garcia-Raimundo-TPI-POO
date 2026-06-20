@@ -16,7 +16,7 @@ import src.integrador.services.PedidoService;
 /**
  * Submenú Usuarios - Sin Scanner.
  *
- * @author Garcia Bautista
+ * @author JuanMR
  */
 public class MenuUsuario {
     private PedidoService pedidoService;
