@@ -25,7 +25,7 @@ public class Pedido extends Base implements Calculable {
     //Usuario que realiza el pedido
     private Usuario usuario;
     
-        // Constructor vacío
+        // Constructor 
     public Pedido() {
         super();
         this.total = 0.0;
@@ -40,7 +40,7 @@ public class Pedido extends Base implements Calculable {
         this.formaPago = formaPago;
         this.usuario = usuario;
         
-        this.total = 0.0; // Se calcula, no se setea manualmente [cite: 753]
+        this.total = 0.0; // Se calcula, no se setea manualmente
         this.detalles = new ArrayList<>();
     } 
     
