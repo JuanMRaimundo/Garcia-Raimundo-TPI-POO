@@ -476,7 +476,7 @@ Actualización de estado de pedido de PENDIENTE a CONFIRMADO, demostrando el cic
 ---
 ### PDF Marco Teórico
 
-📄 [Descargar / Ver Documentación Técnica (PDF)](./Raimundo_Garcia_TP-Integrador.pdf)
+📄 [Ver Documentación Técnica (PDF)](Raimundo_Garcia_TP-Integrador-POO.pdf)
 
 ---
 
