@@ -475,7 +475,8 @@ Actualización de estado de pedido de PENDIENTE a CONFIRMADO, demostrando el cic
 
 ---
 ### PDF Marco Teórico
-[![Ver PDF](https://shields.io)](/Raimundo_Garcia_TP-Integrador.pdf)
+
+📄 [Descargar / Ver Documentación Técnica (PDF)](./Raimundo_Garcia_TP-Integrador.pdf)
 
 ---
 
