@@ -508,7 +508,10 @@ BUILD SUCCESSFUL (total time: 45 seconds)
 - **IDE Utilizado:** Apache NetBeans 23
 
 ---
+### PDF Marco Teórico
+[![Ver PDF](https://shields.io)](/Raimundo_Garcia_TP-Integrador.pdf)
 
+---
 
 ## 📚 Bibliografía y Recursos
 
