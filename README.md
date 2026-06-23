@@ -11,7 +11,7 @@
 
 [Descripción](#-descripción) • 
 [Características](#-características) • 
-[Tecnologías](#-tecnologías) • 
+[Tecnologías](#-Tecnologías-y-Herramientas) • 
 [Requisitos e Instalación](#-requisitos-e-instalación) • 
 [Cómo Abrir en NetBeans](#-cómo-abrir-el-proyecto-en-apache-netbeans) • 
 [Ejecución](#-ejecución-desde-netbeans) • 
@@ -32,17 +32,17 @@ Este proyecto fue desarrollado como **Trabajo Práctico Integrador** para la cá
 
 ### ✅ Requisitos del Enunciado Cumplidos
 
-- [x] Modelado UML correcto con herencia, interfaces y composición
-- [x] Programación Orientada a Objetos (encapsulamiento, polimorfismo, abstracción)
-- [x] Estructuras dinámicas (Colecciones Java - ArrayList)
-- [x] Interfaces para comportamientos calculables (`Calculable`)
-- [x] Excepciones personalizadas (`DatoInvalidoException`, `EmailDuplicadoException`, etc.)
-- [x] Manejo robusto de errores con validaciones en todas las capas
-- [x] Patrón Service Layer (separación Entities ↔ Services ↔ UI)
-- [x] Inyección de dependencias manual
-- [x] Baja lógica (Soft Delete) para integridad histórica
-- [x] Validaciones de negocio (precio ≥ 0, stock ≥ 0, email único, etc.)
-- [x] Todo el desarrollo realizado íntegramente en **Apache NetBeans**
+- ✅ Modelado UML correcto con herencia, interfaces y composición
+- ✅ Programación Orientada a Objetos (encapsulamiento, polimorfismo, abstracción)
+- ✅ Estructuras dinámicas (Colecciones Java - ArrayList)
+- ✅ Interfaces para comportamientos calculables (`Calculable`)
+- ✅ Excepciones personalizadas (`DatoInvalidoException`, `EmailDuplicadoException`, etc.)
+- ✅ Manejo robusto de errores con validaciones en todas las capas
+- ✅ Patrón Service Layer (separación Entities ↔ Services ↔ UI)
+- ✅ Inyección de dependencias manual
+- ✅ Baja lógica (Soft Delete) para integridad histórica
+- ✅ Validaciones de negocio (precio ≥ 0, stock ≥ 0, email único, etc.)
+- ✅ Todo el desarrollo realizado íntegramente en **Apache NetBeans**
 
 ---
 
@@ -378,13 +378,13 @@ Al abrir el proyecto en el IDE, verás esta jerarquía en el panel **Projects**:
   └─ createdAt: LDt └─ producto: Producto
        ▲ extends
        │
-  ┌────┼────────┬──────────┬──────────┐
-  │    │        │          │          │
-Categoria Producto Usuario   Pedido ◄──1:m──┐
-  │      │        │          │                │
-  1:m   N:1      1:N        1:m         DetallePedido
-  │      │                             m : 1
-  └──────┴──────────────────────────────┘Producto
+  ┌────┼────────┬──────────────┬──────┐
+  │    │        │              │      │
+Categoria Producto Usuario   Pedido   │  ◀──1:m──┐
+  │      │        │            │      │     DetallePedido
+  1:m   N:1      1:N          1:m     │          ▲
+  │                                   │        m : 1
+  └───────────────────────────────────┘       Producto
 ```
 
 ### Patrones de Diseño Implementados
@@ -403,109 +403,75 @@ Categoria Producto Usuario   Pedido ◄──1:m──┐
 
 ### Vista del Proyecto en NetBeans (Panel Projects)
 
-[Aqui deberiamos remplazar lo de abajo por las capturas]
-```
-┌─ Projects ──────────────────────────────────┐
-│ 📁 integrador                          │
-│  ├── 📁 Source Packages                    │
-│  │   └── 📁 integrador                     │
-│  │       └── Main.java ⭐ (Main File)      │
-│  │       ├── 📁 entities                  │
-│  │       │   ├── Base.java                 │
-│  │       │   ├── Categoria.java            │
-│  │       │   ├── Producto.java             │
-│  │       │   ├── Usuario.java              │
-│  │       │   ├── Pedido.java               │
-│  │       │   └── DetallePedido.java        │
-│  │       ├── 📁 enums                      │
-│  │       ├── 📁 interfaces                 │
-│  │       ├── 📁 services                   │
-│  │       ├── 📁 exception                  │
-│  │       └── 📁 ui                         │
-│  │           ├── ConsolaUtil.java          │
-│  │           ├── MenuPrincipal.java        │
-│  │           └── ...                       │
-│  ├── 📁 Libraries                          │
-│  └── 📁 Test Packages                      │
-└────────────────────────────────────────────┘
-```
+
+<img width="314" height="701" alt="image" src="https://github.com/user-attachments/assets/418b6afe-b019-4e30-a683-f9c7bfd4a84f" />
 
 ### Ventana de Output (Ejecutando el Programa)
 
-```
-<output tab - FoodStoreProg2 (run)>
-run:
-╔══════════════════════════════════════════╗
-║     🍕 FOOD STORE - SISTEMA DE GESTIÓN    ║
-╚══════════════════════════════════════════╝
-Inicializando sistema...
+<img width="515" height="850" alt="image" src="https://github.com/user-attachments/assets/c2874f7f-3e09-46c6-97df-58309d0565b0" />
 
-╔═══════════════════════════════════════════════════════╗
-║         🍕 SISTEMA DE PEDIDOS - FOOD STORE             ║
-╚═══════════════════════════════════════════════════════╝
-┌───────────────────────────────────────────────────────┐
-│  1️⃣  Categorías                                        │
-│  2️⃣  Productos                                         │
-│  3️⃣  Usuarios                                          │
-│  4️⃣  Pedidos                                           │
-│  0️⃣  Salir del sistema                                 │
-└───────────────────────────────────────────────────────┘
-Seleccione una opción: 1
+Creación exitosa de la categoría “Pizzas”. El sistema asigna automáticamente ID=1, registra timestamp, y confirma la operación.
 
->>> Accediendo a Gestión de Categorías...
-
-┌────────────────────────────────────────────┐
-│      📂 GESTIÓN DE CATEGORÍAS              │
-├────────────────────────────────────────────┤
-│  1. Listar categorías                      │
-│  2. Crear categoría                        │
-│  3. Editar categoría                       │
-│  4. Eliminar categoría                     │
-│  0. Volver al menú principal               │
-└────────────────────────────────────────────┘
-Seleccione operación: 2
-
---- CREAR NUEVA CATEGORÍA ---
-Ingrese nombre: Pizzas
-Ingrese descripción: Pizzas artesanales
-✅ ÉXITO: Categoría creada con ID #1
-   Nombre: Pizzas
-
-BUILD SUCCESSFUL (total time: 45 seconds)
-```
 ---
 
-## 🎬 Video Demostrativo
+<img width="447" height="546" alt="image" src="https://github.com/user-attachments/assets/992695bb-6977-49af-86d7-6c5a2f563ad9" />
 
-🎥 **Video completo grabado desde NetBeans (10-15 minutos):**
+Validación de precio negativo rechazada. El servicio ProductoService detecta la violación de la regla R1 y lanza DatoInvalidoException, que el menú captura y muestra amigablemente.
 
-[🔗 Ver Demostración en YouTube](https://www.youtube.com/watch?v=tQp_0tStC1U)
+---
 
-**Contenido del video:**
-- 00:00 - Apertura del proyecto en NetBeans 23
-- 01:00 - Recorrido por la estructura de paquetes (Projects panel)
-- 02:00 - Demostración de Categorías (CRUD completo)
-- 05:00 - Demostración de Productos (con validaciones)
-- 07:00 - Demostración de Usuarios (email único)
-- 09:00 - **Demostración principal**: Creación de pedido paso a paso
-- 13:00 - Depuración con breakpoints (mostrando Variables window)
-- 14:30 - Conclusiones
+<img width="676" height="390" alt="image" src="https://github.com/user-attachments/assets/c38d6a4a-7486-442f-bcd9-524ba0edd29c" />
+
+Listado de productos mostrando la relación N:1 con Categorías. Cada producto displays su categoría asociada ("Pizzas"), demostrando la inyección de dependencia funcional.
+
+---
+
+<img width="676" height="390" alt="image" src="https://github.com/user-attachments/assets/c32ab1c0-72ce-4fb5-9a54-e20300b0e62a" />
+
+Listado de productos mostrando la relación N:1 con Categorías. Cada producto displays su categoría asociada ("Pizzas"), demostrando la inyección de dependencia funcional.
+
+---
+
+<img width="785" height="854" alt="image" src="https://github.com/user-attachments/assets/42a33320-7178-4d8a-8457-00fc46e3d61f" />
+
+Creación de usuario con validación de email. El sistema verifica formato (@) y unicidad contra la base de datos en memoria.
+
+
+---
+
+<img width="517" height="833" alt="image" src="https://github.com/user-attachments/assets/13a4ce60-ccfa-4817-9fb0-64af73ee3acf" />
+
+Flujo completo de creación de pedido (paso a paso): selección de usuario → agregado de primer detalle (2 Pizzas Napolitana, subtotal $1000) → agregado de segundo detalle (3 Gaseosas, subtotal $210) → resumen final mostrando total $2150 y forma de pago Efectivo. Se observa la interface Calculable calculando el total automáticamente.
+
+---
+
+<img width="645" height="527" alt="image" src="https://github.com/user-attachments/assets/b0ace272-0a21-4ce2-b4ea-2425e7e72ff9" />
+
+Actualización de estado de pedido de PENDIENTE a CONFIRMADO, demostrando el ciclo de vida definido por el enum Estado.
+
+---
+
+## 🎬 Video
+
+🎥 **Video completo (15 minutos):**
+
+[🔗 Ver explicacion del proyecto en YouTube](https://www.youtube.com/watch?v=tQp_0tStC1U)
 
 ---
 
 ## 👥 Autores
 
-| Integrante | Legajo | Rol en Equipo | Responsabilidades Principales |
-|------------|--------|---------------|-------------------------------|
-| **[Nombre Apellido 1]** | XXXXX | **Arquitecto de Dominio** | Entidades (Base, Categoria, Producto, Usuario, Pedido, DetallePedido), Enums, Interfaces, Excepciones, Services completos, Lógica de negocio, Validaciones. Desarrollado en NetBeans usando el editor de código y el refactoring. |
-| **[Nombre Apellido 2]** | XXXXX | **Arquitecto de Presentación** | Main.java, ConsolaUtil.java, MenuPrincipal.java, Menús (Categoria, Producto, Usuario, Pedido), Pruebas integrales desde la Output window, Documentación PDF, Video demostrativo. |
+| Integrante | Comisión | Email |
+|------------|----------|-----------|
+| **Juan Marco Raimundo** | 2 | juanmr.093@gmail.com  |
+| **Lucas Bautista Garcia** | 5 | bautigarcia264@gmail.com |
 
 ### Datos Académicos
 - **Institución:** UTN - Universidad Tecnológica Nacional
 - **Carrera:** Tecnicatura Universitaria en Programación a Distancia
 - **Materia:** Programación 2
 - **Año Lectivo:** 2026
-- **IDE Utilizado:** Apache NetBeans 23
+- **IDE Utilizado:** Apache NetBeans 30
 
 ---
 ### PDF Marco Teórico
@@ -515,8 +481,31 @@ BUILD SUCCESSFUL (total time: 45 seconds)
 
 ## 📚 Bibliografía y Recursos
 
-### Documentación Oficial
-[Por agregar]
+### Documentación 
+
+### 4.1 Material de Cátedra
+- [1] UTN FRRO. (2026). Trabajo Práctico Integrador - Programación 2. Enunciado oficial con especificación de requisitos UML, historias de usuario y criterios de evaluación.
+- [2] UTN FRRO. (2026). UNIDAD 1: Introducción a Java
+- [3] UTN FRRO. (2026). UNIDAD 2: Programación Estructurada 
+- [4] UTN FRRO. (2026). UNIDAD 3: Introducción a la Orientación a Objetos
+- [5] UTN FRRO. (2026). UNIDAD 4: Programación Orientada a Objetos - Nivel Intermedio 
+- [6] UTN FRRO. (2026). UNIDAD 5: UML Básico 
+- [7] UTN FRRO. (2026). UNIDAD 6: Colecciones en Java
+- [8] UTN FRRO. (2026). UNIDAD 7: Herencia y polimorfismo
+- [9] UTN FRRO. (2026). UNIDAD 8: Interfaces y Excepciones
+- [10] UTN FRRO. (2026). UNIDAD 9: Genéricos en Java
+- [11] UTN FRRO. (2026). UNIDAD 10: Acceso a Base de Datos con JDBC
+
+### 4.2 Herramientas
+- [12] The Apache Software Foundation. Apache NetBeans IDE 23 - Official Website. Recuperado de: https://netbeans.apache.org/
+- [13] GitHub, Inc. Git - Documentación Oficial. Recuperado de: https://git-scm.com/doc
+
+### 4.3  Material extra (HTML para hacer el Readme)
+- [14] LenguajeHTML.com. Tutorial de HTML: Aprende HTML desde cero. Recuperado de https://lenguajehtml.com/
+- [15] Mozilla Developer Network.. HTML: Lenguaje de Marcas de Hipertexto | MDN. Recuperado de https://developer.mozilla.org/es/docs/Web/HTML
+- [16] W3Schools.  HTML Tutorial. Recuperado de https://www.w3schools.com/html/
+- [17] Khan Academy. HTML basics: Introduction to HTML. Recuperado de https://es.khanacademy.org/computing/computer-programming/html-css
+
 
 ### Recursos del Curso
 - **Enunciado del TP:** Cátedra Programación 2 - UTN 
